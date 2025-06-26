@@ -67,6 +67,9 @@ DeepRAG/
 └── public/               # 静态资源
 ```
 
+**更多后端接口代码即将开放**
+
+
 ## 🚀 快速开始
 
 ### 环境要求
@@ -161,60 +164,6 @@ npm install
 npm run dev
 ```
 
-### 数据库初始化
-
-项目包含 `docker/init.sql` 文件用于初始化MySQL数据库结构。
-
-## 📚 API文档
-
-### 用户认证API
-
-- `GET /v1/me/api-key` - 获取用户API密钥 (需要JWT认证)
-
-### 文件处理API
-
-- 文档上传和处理相关接口
-- 支持多种文档格式
-
-### 生成API
-
-- 智能问答和内容生成接口
-
-## 🔐 安全说明
-
-- 所有API接口支持JWT认证
-- 数据库连接使用加密传输
-- 文件上传有格式和大小限制
-- 用户权限分级管理
-
-## 📖 配置说明
-
-### 服务配置
-
-主要配置文件位于 `docker/service_conf.yaml.template`，包含：
-
-- 数据库连接配置
-- 存储服务配置
-- 搜索引擎配置
-- 缓存配置
-- AI模型配置
-
-### Nginx配置
-
-Nginx配置位于 `docker/nginx/` 目录，包含：
-
-- 反向代理配置
-- 负载均衡配置
-- SSL配置支持
-
-## 🤝 贡献指南
-
-1. Fork 项目
-2. 创建功能分支 (`git checkout -b feature/AmazingFeature`)
-3. 提交更改 (`git commit -m 'Add some AmazingFeature'`)
-4. 推送到分支 (`git push origin feature/AmazingFeature`)
-5. 创建 Pull Request
-
 ## 📄 许可证
 
 本项目采用 MIT 许可证 - 查看 [LICENSE](LICENSE) 文件了解详情。
@@ -224,8 +173,11 @@ Nginx配置位于 `docker/nginx/` 目录，包含：
 如有问题或建议，请通过以下方式联系：
 
 - 创建 Issue
-- 发送邮件至 [your-email@example.com]
+- 发送邮件至 [ht20201031@163.com]
 
 ## 🙏 致谢
 
-感谢所有为这个项目贡献代码和想法的开发者。
+特别感谢以下开源项目的启发和技术支持：
+
+- [RAGFlow](https://github.com/infiniflow/ragflow) - 基于深度文档理解的开源RAG引擎，为本项目提供了核心技术架构和实现思路
+- [Deer-Flow](https://github.com/bytedance/deer-flow.git) - 字节跳动开源的工作流引擎，为本项目的流程管理提供了重要参考
