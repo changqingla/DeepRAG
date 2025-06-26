@@ -1,0 +1,50 @@
+import { Card, CardContent, CardFooter } from "@/components/ui/card"
+import { FileText, MoreHorizontal } from "lucide-react"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+
+interface DataCardProps {
+  title: string
+  description: string
+  size: string
+  updatedAt: string
+  format: string
+}
+
+export function DataCard({ title, description, size, updatedAt, format }: DataCardProps) {
+  return (
+    <Card className="overflow-hidden">
+      <CardContent className="p-6">
+        <div className="flex items-start justify-between mb-4">
+          <div className="bg-[#EEF2FF] p-2 rounded">
+            <FileText className="h-5 w-5 text-[#6366f1]" />
+          </div>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <button className="h-8 w-8 flex items-center justify-center rounded-full hover:bg-gray-100">
+                <MoreHorizontal className="h-4 w-4" />
+              </button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <DropdownMenuItem>下载</DropdownMenuItem>
+              <DropdownMenuItem>分享</DropdownMenuItem>
+              <DropdownMenuItem>重命名</DropdownMenuItem>
+              <DropdownMenuItem className="text-red-600">删除</DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </div>
+        <h3 className="font-medium text-lg mb-2">{title}</h3>
+        <p className="text-sm text-gray-600 mb-4">{description}</p>
+        <div className="flex items-center gap-3">
+          <span className="text-xs bg-gray-100 px-2 py-1 rounded text-gray-700">{size}</span>
+          <span className="text-xs bg-gray-100 px-2 py-1 rounded text-gray-700">{format}</span>
+        </div>
+      </CardContent>
+      <CardFooter className="p-6 pt-0 border-t border-gray-100 mt-4">
+        <div className="w-full flex justify-between items-center">
+          <span className="text-sm text-gray-500">更新于 {updatedAt}</span>
+          <button className="text-sm text-[#6366f1]">查看详情</button>
+        </div>
+      </CardFooter>
+    </Card>
+  )
+}
